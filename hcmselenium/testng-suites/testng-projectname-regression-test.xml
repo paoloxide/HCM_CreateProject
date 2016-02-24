@@ -19,7 +19,7 @@
   	<test name="Compensation Management">    
  	 <classes>
    	 <parameter name="TestNo" value="Test Case 1">
-		<parameter name="ExcelFilePath" value="//var//jenkins_home//jobs//CreateProject//workspace//hcmselenium//src//hcm//testdata//SampleTestData.xlsx"></parameter>
+		<parameter name="ExcelFilePath" value="//var//jenkins_home//jobs//Oracle//jobs//HCM//jobs//CreateProject//workspace//hcmselenium//src//hcm//testdata//SampleTestData.xlsx"></parameter>
     	<parameter name="ExcelSheetName" value="Compensation Management"></parameter>
      	 <class name="hcm.tests.CompensationManagementTest"/>      
      	 </parameter>
