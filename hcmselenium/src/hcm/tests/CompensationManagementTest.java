@@ -10,9 +10,6 @@ import hcm.pageobjects.TaskListManagerTopPage;
 
 import static util.ReportLogger.logFailure;
 
-import java.util.Iterator;
-import java.util.Set;
-
 public class CompensationManagementTest extends BaseTest {
 	
 	@Test
@@ -26,14 +23,14 @@ public class CompensationManagementTest extends BaseTest {
 	
         catch (AssertionError ae)
         {
-//            takeScreenshot();
+            takeScreenshot();
             logFailure(ae.getMessage());
 
             throw ae;
         }
         catch (Exception e)
         {
-//            takeScreenshot();
+            takeScreenshot();
             logFailure(e.getMessage());
 
             throw e;
@@ -43,21 +40,22 @@ public class CompensationManagementTest extends BaseTest {
 	public void managePerf() throws Exception{
 			
 		LoginPage login = new LoginPage(driver);
-//		takeScreenshot();
+		takeScreenshot();
 		login.enterUserID(5);
 		login.enterPassword(6);
 		login.clickSignInButton();
 		
 		FuseWelcomePage welcome = new FuseWelcomePage(driver);
-//		takeScreenshot();
-		welcome.clickUserMenu("Setup and Maintenance");
+		takeScreenshot();
+		welcome.clickNavigator("More...");
+		clickNavigationLink("Setup and Maintenance");
 		
 		TaskListManagerTopPage task = new TaskListManagerTopPage(driver);
-//		takeScreenshot();
+		takeScreenshot();
 		
 		task.clickTask("Manage Implementation Projects");
 		Thread.sleep(3000);
-//		takeScreenshot();
+		takeScreenshot();
 		
 		startTableRep("Validation of the Current Screen");
 		assertTextInElementPresent("//td[2]/div/h1", "Manage Implementation Projects");
@@ -71,17 +69,21 @@ public class CompensationManagementTest extends BaseTest {
 		waitForElement("pt1:USma:0:MAnt1:1:pt1:r1:1:ap1:soc3::content", "id");
 		
 		startTableRep("Validate that the created project is automatically assigned to the current user.");
-		assertDropdownSelectedOption("pt1:USma:0:MAnt1:1:pt1:r1:1:ap1:soc3::content", 5, "Assigned To");
 		assertDefaultValue("pt1:USma:0:MAnt1:1:pt1:r1:1:ap1:soc3::content", 5);
 		endTableRep();
-				
+			
+		Thread.sleep(3000);
 		task.clickNextButton();
 		Thread.sleep(3000);
-//		takeScreenshot();
+		takeScreenshot();
+		
+		if (is_element_visible("//tbody/tr/td/div[contains(text(),'"+getExcelData(7)+"')]/span/a[contains(@title,'Expand')]", "xpath")){
 		
 		task.clickExpandFolder(7);
 		Thread.sleep(3000);
-//		takeScreenshot();
+		}
+		
+		takeScreenshot();
 		
 		startTableRep("Validation of created tasks");
 		assertTextInElementPresent("//tr/td/div/table/tbody/tr/td/div[contains(text(),'"+getExcelData(8)+"')]", 8);
@@ -89,15 +91,15 @@ public class CompensationManagementTest extends BaseTest {
 		assertTextInElementPresent("//tr/td/div/table/tbody/tr/td/div[contains(text(),'"+getExcelData(10)+"')]", 10);
 		endTableRep();
 		
-		task.clickTaskCheckbox(7);
-		task.clickTaskCheckbox(8);
-		task.clickTaskCheckbox(9);
-		task.clickTaskCheckbox(10);
-//		takeScreenshot();
+		task.clickMainTaskCheckbox(7);
+		task.clickSubTaskCheckbox(7,8);
+		task.clickSubTaskCheckbox(7,9);
+		task.clickSubTaskCheckbox(7,10);
+		takeScreenshot();
 		
 		task.clickSaveAndOpenProjectButton();
-		Thread.sleep(3000);
-//		takeScreenshot();
+		waitForElement("//button[text()='Edit']", "xpath");
+		takeScreenshot();
 				
 		}
 		 	  

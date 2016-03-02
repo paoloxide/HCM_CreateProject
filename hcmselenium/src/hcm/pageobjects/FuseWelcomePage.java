@@ -25,5 +25,13 @@ public class FuseWelcomePage extends BasePage{
 		log("Clicking " + menu +"...");
 		System.out.println("Clicking " + menu +"...");
 	}
+	
+	public void clickNavigator(String menu){
+		
+		clickByXpath("//img[@alt='Navigator']");
+		log("Clicked the Navigator...");
+		System.out.println("Clicked the Navigator...");	
+		
+	}
 
 }

@@ -51,6 +51,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -58,7 +59,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.FindsById;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -199,18 +199,17 @@ import org.apache.poi.ss.usermodel.Row;
 		            if (webBrowser.equalsIgnoreCase("ie"))
 		            {
 		                File file = new File(
-		                        "C:\\Workspace\\hcmselenium\\resources\\IEDriverServer.exe");
+		                        "C:\\Users\\jerrick.m.falogme\\Desktop\\my_workspace\\HCM-Configs\\hcmselenium\\resources\\IEDriverServer.exe");
 		                System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 		                driver = new ExtendedInternetExplorerDriver(createCapabilities(webBrowser));
 		                System.out.println("Running Test in IE");
 		                log("Running Test in IE");
 		                driver.get(webappUrl);
-		               
 		            }
 		            else if (webBrowser.equalsIgnoreCase("firefox"))
 		            {
-		            	driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), DesiredCapabilities.firefox());
-		            	//driver = new ExtendedFirefoxDriver(createCapabilities(webBrowser));
+		            	//driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), DesiredCapabilities.firefox());
+		            	driver = new ExtendedFirefoxDriver(createCapabilities(webBrowser));
 		                System.out.println("Running Test in FireFox");
 		                log("Running Test in FireFox");
 		                driver.get(webappUrl);
@@ -218,7 +217,7 @@ import org.apache.poi.ss.usermodel.Row;
 		            else
 		            {
 		                File file = new File(
-		                        "C:\\Workspace\\hcmselenium\\resources\\chromedriver.exe");
+		                        "C:\\Users\\jerrick.m.falogme\\Desktop\\my_workspace\\HCM-Configs\\hcmselenium\\resources\\chromedriver.exe");
 		                System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		                driver = new ExtendedChromeDriver(createCapabilities(webBrowser));
 		                System.out.println("Running Test in Chrome");

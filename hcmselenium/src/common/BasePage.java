@@ -39,10 +39,10 @@ import static util.ReportLogger.tableRepLog;
 public abstract class BasePage {
 
 	/** The default timeout interval for waiting. */
-    private static final long DEFAULT_TIMEOUT = 60L;
+    private static final long DEFAULT_TIMEOUT = 30L;
 
     /** Timeout for finding page element in seconds */
-    protected static final long FIND_ELEMENT_TIMEOUT = 30L;
+    protected static final long FIND_ELEMENT_TIMEOUT = 15L;
 
     /** The Selenium2 web driver. */
     protected WebDriver driver;
@@ -105,29 +105,13 @@ public abstract class BasePage {
 	
     
 	
-	/**
+    /**
      * Read property file
      * 
      * @param elementId the element id
      * @return the element found
      */
-	public static String getPageProperties(String pageObject){
-		File file = new File("C:\\Workspace\\xcelenergyselenium\\myaccounttest.properties");//change file path 
-		FileInputStream fileInput = null;
-		try {
-			fileInput = new FileInputStream(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		Properties prop = new Properties();
-		try {
-			prop.load(fileInput);
-		}catch (IOException e) {
-			e.printStackTrace();
-		}
-		String objectPrefix = prop.getProperty(pageObject);
-		return objectPrefix;
-	}
+ 
 
     /**
      * Find the element in the DOM by id.
