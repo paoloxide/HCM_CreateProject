@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 130.142 sec <<< FAILURE! - in TestSuite
+a_test(hcm.tests.ManagePerformanceRolesTest)  Time elapsed: 99.25 sec  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for element containing 'Create Implementation Project: Enter Basic Information' to no longer be visible: By.xpath: //h1[contains(text(),'Create Implementation')]
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'ETDB-510P680-D', ip: '169.254.231.255', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:292)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+	at hcm.pageobjects.TaskListManagerTopPage.fluentWaitForElementInvisibility(TaskListManagerTopPage.java:370)
+	at hcm.tests.ManagePerformanceRolesTest.managePerf(ManagePerformanceRolesTest.java:88)
+	at hcm.tests.ManagePerformanceRolesTest.a_test(ManagePerformanceRolesTest.java:27)
+

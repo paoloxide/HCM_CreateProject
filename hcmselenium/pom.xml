@@ -61,6 +61,7 @@
 						</excludes>
 						<suiteXmlFiles>
 							<suiteXmlFile>testng-suites\testng-${testNGSuiteName}.xml</suiteXmlFile>
+							<!--suiteXmlFile>testng-suites\testng-projectname-regression-test.xml</suiteXmlFile-->
 						</suiteXmlFiles>
 		            </configuration>
 		        </plugin>
@@ -158,6 +159,7 @@
 					<reporttime>${maven.build.timestamp}</reporttime>
 					<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
 					<reportNGOutputDirectory>test-reports/${reporttime}-${testNGSuiteName}</reportNGOutputDirectory>
+					
 				</properties>
 			</profile>
 		</profiles>
