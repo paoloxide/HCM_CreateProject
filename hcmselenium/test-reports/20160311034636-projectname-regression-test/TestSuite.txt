@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 80.777 sec <<< FAILURE! - in TestSuite
+a_test(hcm.tests.ManagePerformanceRolesTest)  Time elapsed: 57.764 sec  <<< FAILURE!
+common.DuplicateNameEntryException: Implementation Name already exists..
+ Please select a unique Name for the Implementation Project
+	at hcm.tests.ManagePerformanceRolesTest.managePerf(ManagePerformanceRolesTest.java:85)
+	at hcm.tests.ManagePerformanceRolesTest.a_test(ManagePerformanceRolesTest.java:27)
+
