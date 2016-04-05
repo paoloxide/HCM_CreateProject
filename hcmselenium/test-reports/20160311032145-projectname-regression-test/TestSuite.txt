@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 126.222 sec <<< FAILURE! - in TestSuite
+a_test(hcm.tests.ManagePerformanceRolesTest)  Time elapsed: 71.728 sec  <<< FAILURE!
+org.openqa.selenium.WebDriverException: getElementByXPath(...) is null
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ETDB-510P680-D', ip: '169.254.231.255', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: unknown
+Command duration or timeout: 243 milliseconds
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'ETDB-510P680-D', ip: '169.254.231.255', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Session ID: 7b10f559-de81-4322-9247-8fd9bbeba88c
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, acceptSslCerts=true, browserName=firefox, rotatable=false, locationContextEnabled=true, webdriver.remote.sessionid=7b10f559-de81-4322-9247-8fd9bbeba88c, version=44.0.2, databaseEnabled=true, cssSelectorsEnabled=true, handlesAlerts=true, webStorageEnabled=true, nativeEvents=false, applicationCacheEnabled=true, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:577)
+	at hcm.pageobjects.TaskListManagerTopPage.jsFindThenClick(TaskListManagerTopPage.java:1095)
+	at hcm.tests.ManagePerformanceRolesTest.managePerf(ManagePerformanceRolesTest.java:73)
+	at hcm.tests.ManagePerformanceRolesTest.a_test(ManagePerformanceRolesTest.java:27)
+Caused by: org.openqa.selenium.WebDriverException: getElementByXPath(...) is null
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ETDB-510P680-D', ip: '169.254.231.255', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: unknown
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'ETDB-510P680-D', ip: '169.254.231.255', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: unknown
+	at <anonymous class>.anonymous(https://fs-aufsn4x0cba.oracleoutsourcing.com/setup/faces/TaskListManagerTop?fnd=%3B%3B%3B%3Bfalse%3B256%3B%3B%3B&_afrLoop=508358167332312&_afrWindowMode=0&_afrWindowId=tzv5aarca&_adf.ctrl-state=7orq8b9xz_1 line 69 > Function:1)
+	at <anonymous class>.handleEvaluateEvent(https://fs-aufsn4x0cba.oracleoutsourcing.com/setup/faces/TaskListManagerTop?fnd=%3B%3B%3B%3Bfalse%3B256%3B%3B%3B&_afrLoop=508358167332312&_afrWindowMode=0&_afrWindowId=tzv5aarca&_adf.ctrl-state=7orq8b9xz_1:69)
+
